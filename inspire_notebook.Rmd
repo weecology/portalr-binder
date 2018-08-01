@@ -1,0 +1,12 @@
+---
+output: html_document
+---
+
+#### Population dynamics of small mammals at the Portal Project
+
+```{r, fig.width=5, fig.height=2.5}
+library(ggplot2)
+abund = portalr::abundance(shape="flat")
+ggplot(abund, aes(x = period, y = abundance, color = species)) +
+  geom_line() + theme(legend.position="none")
+```
